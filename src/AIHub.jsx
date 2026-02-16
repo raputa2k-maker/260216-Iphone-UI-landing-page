@@ -106,6 +106,31 @@ const apps = [
       </svg>
     ),
   },
+  {
+    name: "Style Transfer",
+    gradient: "from-[#e44d90] to-[#c13584]",
+    url: "https://260216-image-style-transfer.vercel.app/",
+    // 추상화된 심볼: 브러시/팔레트 형태
+    icon: (
+      <svg viewBox="0 0 40 40" fill="none" className="w-8 h-8">
+        <rect x="8" y="6" width="14" height="18" rx="2" fill="rgba(255,255,255,0.5)" />
+        <rect x="18" y="16" width="14" height="18" rx="2" fill="rgba(255,255,255,0.9)" />
+        <path d="M15 15l10 10" stroke="rgba(255,255,255,0.9)" strokeWidth="2" strokeLinecap="round" />
+        <circle cx="15" cy="15" r="3" fill="rgba(255,255,255,0.9)" />
+        <text
+          x="25"
+          y="29"
+          textAnchor="middle"
+          fill="#c13584"
+          fontSize="9"
+          fontWeight="700"
+          fontFamily="-apple-system, sans-serif"
+        >
+          ST
+        </text>
+      </svg>
+    ),
+  },
 ];
 
 /* ──────────────────────────────────────────────
@@ -353,7 +378,7 @@ export default function AIHub() {
               {/* ── 하단 독 (Dock) ── */}
               <div className="mt-auto px-5 pb-2">
                 <div className="bg-white/10 backdrop-blur-xl rounded-[28px] px-5 py-3 flex items-center justify-around">
-                  {apps.map((app, index) => (
+                  {apps.slice(0, 4).map((app, index) => (
                     <a
                       key={`dock-${app.name}`}
                       href={app.url}
