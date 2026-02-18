@@ -131,6 +131,33 @@ const apps = [
       </svg>
     ),
   },
+  {
+    name: "Design Pick",
+    gradient: "from-[#f97316] to-[#ea580c]",
+    url: "https://design-pick-henna.vercel.app/",
+    // 추상화된 심볼: 레이아웃 그리드 + 커서
+    icon: (
+      <svg viewBox="0 0 40 40" fill="none" className="w-8 h-8">
+        <rect x="7" y="7" width="12" height="12" rx="2" fill="rgba(255,255,255,0.9)" />
+        <rect x="21" y="7" width="12" height="5" rx="1.5" fill="rgba(255,255,255,0.55)" />
+        <rect x="21" y="14" width="12" height="5" rx="1.5" fill="rgba(255,255,255,0.55)" />
+        <rect x="7" y="21" width="26" height="5" rx="1.5" fill="rgba(255,255,255,0.55)" />
+        <rect x="7" y="28" width="12" height="5" rx="1.5" fill="rgba(255,255,255,0.55)" />
+        <rect x="21" y="28" width="12" height="5" rx="1.5" fill="rgba(255,255,255,0.55)" />
+        <text
+          x="13"
+          y="16"
+          textAnchor="middle"
+          fill="#ea580c"
+          fontSize="8"
+          fontWeight="700"
+          fontFamily="-apple-system, sans-serif"
+        >
+          DP
+        </text>
+      </svg>
+    ),
+  },
 ];
 
 /* ──────────────────────────────────────────────
