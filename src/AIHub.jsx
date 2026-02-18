@@ -158,6 +158,20 @@ const apps = [
       </svg>
     ),
   },
+  {
+    name: "PageCraft",
+    gradient: "from-[#8b5cf6] to-[#6d28d9]",
+    url: "https://page-craft-ai.vercel.app/",
+    // 추상화된 심볼: 코드 에디터 + 페이지
+    icon: (
+      <svg viewBox="0 0 40 40" fill="none" className="w-8 h-8">
+        <rect x="8" y="6" width="24" height="28" rx="3" fill="rgba(255,255,255,0.9)" />
+        <path d="M14 16l-3 4 3 4" stroke="#6d28d9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M26 16l3 4-3 4" stroke="#6d28d9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <line x1="22" y1="14" x2="18" y2="26" stroke="#6d28d9" strokeWidth="1.5" strokeLinecap="round" />
+      </svg>
+    ),
+  },
 ];
 
 /* ──────────────────────────────────────────────
