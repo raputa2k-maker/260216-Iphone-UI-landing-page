@@ -153,7 +153,7 @@ const apps = [
     ),
   },
   {
-    name: "페이지크래프트",
+    name: "상페메이커",
     gradient: "from-[#8b5cf6] to-[#6d28d9]",
     url: "https://page-craft-ai.vercel.app/",
     icon: (
