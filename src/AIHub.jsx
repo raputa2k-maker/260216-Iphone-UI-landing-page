@@ -5,10 +5,9 @@ import { useState, useEffect } from "react";
    ────────────────────────────────────────────── */
 const apps = [
   {
-    name: "ChatGPT",
+    name: "챗GPT",
     gradient: "from-[#10a37f] to-[#1a7f5a]",
     url: "https://chat.openai.com",
-    // 추상화된 심볼: 말풍선 + 이니셜
     icon: (
       <svg viewBox="0 0 40 40" fill="none" className="w-8 h-8">
         <path
@@ -30,10 +29,9 @@ const apps = [
     ),
   },
   {
-    name: "Claude",
+    name: "클로드",
     gradient: "from-[#d4a574] to-[#c4956a]",
     url: "https://claude.ai",
-    // 추상화된 심볼: 별 모양 + 이니셜
     icon: (
       <svg viewBox="0 0 40 40" fill="none" className="w-8 h-8">
         <path
@@ -55,10 +53,9 @@ const apps = [
     ),
   },
   {
-    name: "Gemini",
+    name: "제미나이",
     gradient: "from-[#4285f4] to-[#669df6]",
     url: "https://gemini.google.com",
-    // 추상화된 심볼: 다이아몬드 형태
     icon: (
       <svg viewBox="0 0 40 40" fill="none" className="w-8 h-8">
         <path
@@ -84,10 +81,9 @@ const apps = [
     ),
   },
   {
-    name: "Perplexity",
+    name: "퍼플렉시티",
     gradient: "from-[#20b8cd] to-[#1a9aab]",
     url: "https://perplexity.ai",
-    // 추상화된 심볼: 검색 돋보기 형태
     icon: (
       <svg viewBox="0 0 40 40" fill="none" className="w-8 h-8">
         <circle cx="18" cy="18" r="9" stroke="rgba(255,255,255,0.9)" strokeWidth="2.5" fill="none" />
@@ -107,10 +103,9 @@ const apps = [
     ),
   },
   {
-    name: "Style Transfer",
+    name: "스타일 변환",
     gradient: "from-[#e44d90] to-[#c13584]",
     url: "https://260216-image-style-transfer.vercel.app/",
-    // 추상화된 심볼: 브러시/팔레트 형태
     icon: (
       <svg viewBox="0 0 40 40" fill="none" className="w-8 h-8">
         <rect x="8" y="6" width="14" height="18" rx="2" fill="rgba(255,255,255,0.5)" />
@@ -132,10 +127,9 @@ const apps = [
     ),
   },
   {
-    name: "Design Pick",
+    name: "디자인 픽",
     gradient: "from-[#f97316] to-[#ea580c]",
     url: "https://design-pick-henna.vercel.app/",
-    // 추상화된 심볼: 레이아웃 그리드 + 커서
     icon: (
       <svg viewBox="0 0 40 40" fill="none" className="w-8 h-8">
         <rect x="7" y="7" width="12" height="12" rx="2" fill="rgba(255,255,255,0.9)" />
@@ -159,10 +153,9 @@ const apps = [
     ),
   },
   {
-    name: "PageCraft",
+    name: "페이지크래프트",
     gradient: "from-[#8b5cf6] to-[#6d28d9]",
     url: "https://page-craft-ai.vercel.app/",
-    // 추상화된 심볼: 코드 에디터 + 페이지
     icon: (
       <svg viewBox="0 0 40 40" fill="none" className="w-8 h-8">
         <rect x="8" y="6" width="24" height="28" rx="3" fill="rgba(255,255,255,0.9)" />
@@ -231,13 +224,6 @@ export default function AIHub() {
     <>
       {/* CSS 키프레임 애니메이션 */}
       <style>{`
-        @keyframes gradientShift {
-          0% { background-position: 0% 0%; }
-          25% { background-position: 100% 0%; }
-          50% { background-position: 100% 100%; }
-          75% { background-position: 0% 100%; }
-          100% { background-position: 0% 0%; }
-        }
         @keyframes fadeInUp {
           from {
             opacity: 0;
@@ -254,10 +240,6 @@ export default function AIHub() {
           50% { transform: rotate(2deg); }
           75% { transform: rotate(-1deg); }
           100% { transform: rotate(0deg); }
-        }
-        .animate-gradient-bg {
-          background-size: 300% 300%;
-          animation: gradientShift 18s ease infinite;
         }
         .animate-fade-in-up {
           animation: fadeInUp 0.5s ease-out forwards;
@@ -289,12 +271,14 @@ export default function AIHub() {
             className="absolute inset-[3px] rounded-[47px] overflow-hidden flex flex-col"
             onClick={handleBackgroundClick}
           >
-            {/* 배경화면 — 블루-퍼플 그라데이션 애니메이션 */}
+            {/* 배경화면 — 이미지 배경 (전체 보이게) */}
             <div
-              className="absolute inset-0 animate-gradient-bg"
+              className="absolute inset-0"
               style={{
-                background:
-                  "linear-gradient(135deg, #1a1a3e 0%, #2d1b69 25%, #4a1a8a 50%, #6b2fa0 75%, #1a1a3e 100%)",
+                backgroundImage: "url('/wallpaper.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
               }}
             />
 
@@ -303,7 +287,10 @@ export default function AIHub() {
               {/* ── 상태바 (Status Bar) ── */}
               <div className="flex items-center justify-between px-8 pt-4 pb-1">
                 {/* 왼쪽: 시간 */}
-                <span className="text-white text-sm font-semibold tracking-tight">
+                <span
+                  className="text-sm font-semibold tracking-tight"
+                  style={{ color: "#3d2b4e", textShadow: "0 0 4px rgba(255,255,255,0.3)" }}
+                >
                   {timeString}
                 </span>
 
@@ -313,14 +300,14 @@ export default function AIHub() {
                 {/* 오른쪽: 시스템 아이콘 */}
                 <div className="flex items-center gap-1.5">
                   {/* 셀룰러 신호 */}
-                  <svg viewBox="0 0 18 14" className="w-4 h-3" fill="white">
+                  <svg viewBox="0 0 18 14" className="w-4 h-3" fill="#3d2b4e">
                     <rect x="0" y="10" width="3" height="4" rx="0.5" opacity="1" />
                     <rect x="5" y="7" width="3" height="7" rx="0.5" opacity="1" />
                     <rect x="10" y="4" width="3" height="10" rx="0.5" opacity="1" />
                     <rect x="15" y="0" width="3" height="14" rx="0.5" opacity="0.35" />
                   </svg>
                   {/* Wi-Fi */}
-                  <svg viewBox="0 0 16 12" className="w-4 h-3" fill="white">
+                  <svg viewBox="0 0 16 12" className="w-4 h-3" fill="#3d2b4e">
                     <path
                       d="M8 10.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-3.5-3a5.25 5.25 0 017 0 .75.75 0 01-1 1.12 3.75 3.75 0 00-5 0 .75.75 0 01-1-1.12zm-3-3a9 9 0 0113 0 .75.75 0 01-1.06 1.06 7.5 7.5 0 00-10.88 0A.75.75 0 011.5 4.5z"
                       fillRule="evenodd"
@@ -334,12 +321,12 @@ export default function AIHub() {
                       width="23"
                       height="13"
                       rx="3"
-                      stroke="rgba(255,255,255,0.5)"
+                      stroke="rgba(61,43,78,0.5)"
                       strokeWidth="1"
                       fill="none"
                     />
                     <rect x="2" y="2" width="17" height="10" rx="1.5" fill="#34c759" />
-                    <rect x="24.5" y="4" width="2" height="6" rx="1" fill="rgba(255,255,255,0.4)" />
+                    <rect x="24.5" y="4" width="2" height="6" rx="1" fill="rgba(61,43,78,0.4)" />
                   </svg>
                 </div>
               </div>
@@ -347,14 +334,14 @@ export default function AIHub() {
               {/* ── 날짜/시간 위젯 ── */}
               <div className="text-center mt-12 mb-8">
                 <div
-                  className="text-white text-7xl font-bold tracking-tight"
-                  style={{ textShadow: "0 2px 12px rgba(0,0,0,0.3)" }}
+                  className="text-7xl font-bold tracking-tight"
+                  style={{ color: "#3d2b4e", textShadow: "0 2px 12px rgba(255,255,255,0.3)" }}
                 >
                   {timeString}
                 </div>
                 <div
-                  className="text-white/80 text-lg mt-1 font-medium"
-                  style={{ textShadow: "0 1px 6px rgba(0,0,0,0.3)" }}
+                  className="text-lg mt-1 font-medium"
+                  style={{ color: "rgba(61,43,78,0.7)", textShadow: "0 1px 6px rgba(255,255,255,0.2)" }}
                 >
                   {dateString}
                 </div>
@@ -404,10 +391,10 @@ export default function AIHub() {
                       >
                         {app.icon}
                       </div>
-                      {/* 앱 이름 라벨 */}
+                      {/* 앱 이름 라벨 — 배경과 어울리는 다크 퍼플 통일 */}
                       <span
-                        className="text-white text-[11px] font-medium text-center leading-tight"
-                        style={{ textShadow: "0 1px 3px rgba(0,0,0,0.5)" }}
+                        className="text-[11px] font-semibold text-center leading-tight"
+                        style={{ color: "#3d2b4e", textShadow: "0 1px 4px rgba(255,255,255,0.4)" }}
                       >
                         {app.name}
                       </span>
@@ -418,7 +405,10 @@ export default function AIHub() {
 
               {/* ── 하단 독 (Dock) ── */}
               <div className="mt-auto px-5 pb-2">
-                <div className="bg-white/10 backdrop-blur-xl rounded-[28px] px-5 py-3 flex items-center justify-around">
+                <div
+                  className="backdrop-blur-xl rounded-[28px] px-5 py-3 flex items-center justify-around"
+                  style={{ backgroundColor: "rgba(255,255,255,0.25)" }}
+                >
                   {apps.slice(0, 4).map((app, index) => (
                     <a
                       key={`dock-${app.name}`}
@@ -434,7 +424,7 @@ export default function AIHub() {
                         rounded-xl
                         ${isWiggling ? "animate-wiggle" : ""}
                       `}
-                      style={{ animationDelay: `${(index + 4) * 100}ms` }}
+                      style={{ animationDelay: `${(index + apps.length) * 100}ms` }}
                       onClick={(e) => {
                         if (isWiggling) {
                           e.preventDefault();
@@ -460,7 +450,7 @@ export default function AIHub() {
 
                 {/* ── 홈 인디케이터 바 ── */}
                 <div className="flex justify-center pt-2 pb-1">
-                  <div className="w-32 h-1 bg-white/40 rounded-full" />
+                  <div className="w-32 h-1 rounded-full" style={{ backgroundColor: "rgba(61,43,78,0.4)" }} />
                 </div>
               </div>
             </div>
