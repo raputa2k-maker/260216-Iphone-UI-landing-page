@@ -271,16 +271,65 @@ export default function AIHub() {
             className="absolute inset-[3px] rounded-[47px] overflow-hidden flex flex-col"
             onClick={handleBackgroundClick}
           >
-            {/* 배경화면 — 이미지 배경 (전체 보이게) */}
-            <div
-              className="absolute inset-0"
-              style={{
-                backgroundImage: "url('/wallpaper.png')",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-              }}
-            />
+            {/* 배경화면 — 수채화 하늘 (피치-라벤더-퍼플 구름) */}
+            <div className="absolute inset-0">
+              {/* 메인 그라데이션: 피치 → 라벤더 → 딥퍼플 */}
+              <div
+                className="absolute inset-0"
+                style={{
+                  background: "linear-gradient(180deg, #e8b49a 0%, #dea68e 15%, #d4a0a0 28%, #c9a0b8 40%, #b89cc8 52%, #9b8abf 65%, #8a7bb5 75%, #7b6ba8 85%, #6d5c9a 100%)",
+                }}
+              />
+              {/* 구름 레이어 — 하단 흰/라벤더 구름 */}
+              <div
+                className="absolute inset-0"
+                style={{
+                  background: `
+                    radial-gradient(ellipse 120% 40% at 50% 95%, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.6) 30%, transparent 60%),
+                    radial-gradient(ellipse 80% 35% at 20% 88%, rgba(255,255,255,0.85) 0%, rgba(230,220,240,0.5) 40%, transparent 65%),
+                    radial-gradient(ellipse 90% 30% at 80% 90%, rgba(255,255,255,0.8) 0%, rgba(200,190,220,0.4) 45%, transparent 70%),
+                    radial-gradient(ellipse 60% 25% at 35% 82%, rgba(180,160,200,0.6) 0%, rgba(140,120,180,0.3) 50%, transparent 70%),
+                    radial-gradient(ellipse 70% 20% at 65% 85%, rgba(200,185,220,0.5) 0%, transparent 60%)
+                  `,
+                }}
+              />
+              {/* 별/반짝이 효과 — 작은 점들 */}
+              <div className="absolute inset-0 overflow-hidden">
+                {[
+                  { top: "8%", left: "18%", size: 12, opacity: 0.8 },
+                  { top: "5%", left: "72%", size: 14, opacity: 0.9 },
+                  { top: "15%", left: "85%", size: 10, opacity: 0.7 },
+                  { top: "22%", left: "12%", size: 8, opacity: 0.6 },
+                  { top: "28%", left: "55%", size: 11, opacity: 0.7 },
+                  { top: "18%", left: "42%", size: 6, opacity: 0.5 },
+                  { top: "35%", left: "75%", size: 9, opacity: 0.65 },
+                  { top: "32%", left: "30%", size: 7, opacity: 0.5 },
+                ].map((star, i) => (
+                  <svg
+                    key={i}
+                    className="absolute"
+                    style={{ top: star.top, left: star.left, opacity: star.opacity }}
+                    width={star.size}
+                    height={star.size}
+                    viewBox="0 0 16 16"
+                    fill="white"
+                  >
+                    <path d="M8 0 L9 6 L16 8 L9 10 L8 16 L7 10 L0 8 L7 6 Z" />
+                  </svg>
+                ))}
+                {/* 초승달 */}
+                <svg
+                  className="absolute"
+                  style={{ top: "12%", left: "25%", opacity: 0.85 }}
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="white"
+                >
+                  <path d="M12 2A10 10 0 0 0 7 19.3 8 8 0 0 1 12 2Z" />
+                </svg>
+              </div>
+            </div>
 
             {/* 콘텐츠 레이어 */}
             <div className="relative z-10 flex flex-col h-full">
