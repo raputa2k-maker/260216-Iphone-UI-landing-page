@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8b49a"/>
+      <stop offset="30%" stop-color="#d4a0a0"/>
+      <stop offset="55%" stop-color="#b89cc8"/>
+      <stop offset="80%" stop-color="#8a7bb5"/>
+      <stop offset="100%" stop-color="#6d5c9a"/>
+    </linearGradient>
+    <clipPath id="rounded">
+      <rect width="512" height="512" rx="112" ry="112"/>
+    </clipPath>
+  </defs>
+
+  <!-- 둥근 사각형 배경 -->
+  <g clip-path="url(#rounded)">
+    <!-- 메인 그라데이션 -->
+    <rect width="512" height="512" fill="url(#bg)"/>
+
+    <!-- 구름 레이어 -->
+    <ellipse cx="256" cy="480" rx="320" ry="120" fill="rgba(255,255,255,0.7)"/>
+    <ellipse cx="120" cy="460" rx="200" ry="100" fill="rgba(255,255,255,0.5)"/>
+    <ellipse cx="400" cy="470" rx="220" ry="90" fill="rgba(255,255,255,0.55)"/>
+    <ellipse cx="200" cy="430" rx="140" ry="70" fill="rgba(180,160,210,0.4)"/>
+
+    <!-- 초승달 -->
+    <g transform="translate(130, 80)">
+      <path d="M30 0A25 25 0 0 0 15 45 20 20 0 0 1 30 0Z" fill="rgba(255,255,255,0.9)"/>
+    </g>
+
+    <!-- 별/반짝이 -->
+    <g fill="white">
+      <path d="M350 60 L354 74 L368 78 L354 82 L350 96 L346 82 L332 78 L346 74 Z" opacity="0.85"/>
+      <path d="M420 110 L423 120 L433 123 L423 126 L420 136 L417 126 L407 123 L417 120 Z" opacity="0.7"/>
+      <path d="M90 140 L92 148 L100 150 L92 152 L90 160 L88 152 L80 150 L88 148 Z" opacity="0.6"/>
+      <path d="M300 150 L302 156 L308 158 L302 160 L300 166 L298 160 L292 158 L298 156 Z" opacity="0.5"/>
+      <path d="M200 200 L202 208 L210 210 L202 212 L200 220 L198 212 L190 210 L198 208 Z" opacity="0.55"/>
+    </g>
+
+    <!-- 중앙 AI 심볼 -->
+    <g transform="translate(256, 280)">
+      <!-- 원형 배경 -->
+      <circle cx="0" cy="0" r="75" fill="rgba(255,255,255,0.25)"/>
+      <circle cx="0" cy="0" r="60" fill="rgba(255,255,255,0.35)"/>
+
+      <!-- AI 텍스트 -->
+      <text x="0" y="12" text-anchor="middle" fill="white" font-size="58" font-weight="700" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" letter-spacing="-2">AI</text>
+    </g>
+
+    <!-- 하단 작은 점 장식 -->
+    <circle cx="180" cy="340" r="2" fill="rgba(255,255,255,0.4)"/>
+    <circle cx="330" cy="310" r="1.5" fill="rgba(255,255,255,0.35)"/>
+    <circle cx="380" cy="360" r="2.5" fill="rgba(255,255,255,0.3)"/>
+    <circle cx="140" cy="300" r="1.8" fill="rgba(255,255,255,0.3)"/>
+  </g>
+</svg>
