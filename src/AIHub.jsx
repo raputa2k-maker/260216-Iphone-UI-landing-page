@@ -165,6 +165,19 @@ const apps = [
       </svg>
     ),
   },
+  {
+    name: "스마트스토어\n툴킷",
+    gradient: "from-[#2db400] to-[#1a8a00]",
+    url: "https://smartstore-toolkit.vercel.app/",
+    // 추상화된 심볼: 쇼핑백 + 도구
+    icon: (
+      <svg viewBox="0 0 40 40" fill="none" className="w-8 h-8">
+        <path d="M10 14h20l-2 18H12L10 14z" fill="rgba(255,255,255,0.9)" />
+        <path d="M15 14v-3a5 5 0 0 1 10 0v3" stroke="rgba(255,255,255,0.9)" strokeWidth="2" fill="none" strokeLinecap="round" />
+        <path d="M17 22h6M20 19v6" stroke="#1a8a00" strokeWidth="1.8" strokeLinecap="round" />
+      </svg>
+    ),
+  },
 ];
 
 /* ──────────────────────────────────────────────
@@ -442,7 +455,7 @@ export default function AIHub() {
                       </div>
                       {/* 앱 이름 라벨 — 배경과 어울리는 다크 퍼플 통일 */}
                       <span
-                        className="text-[11px] font-semibold text-center leading-tight"
+                        className="text-[11px] font-semibold text-center leading-tight whitespace-pre-line"
                         style={{ color: "#3d2b4e", textShadow: "0 1px 4px rgba(255,255,255,0.4)" }}
                       >
                         {app.name}
