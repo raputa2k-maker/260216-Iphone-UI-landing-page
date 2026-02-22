@@ -166,7 +166,7 @@ const apps = [
     ),
   },
   {
-    name: "스마트스토어\n툴킷",
+    name: "스마트스토어 툴킷",
     gradient: "from-[#2db400] to-[#1a8a00]",
     url: "https://smartstore-toolkit.vercel.app/",
     // 추상화된 심볼: 쇼핑백 + 도구
@@ -455,7 +455,7 @@ export default function AIHub() {
                       </div>
                       {/* 앱 이름 라벨 — 배경과 어울리는 다크 퍼플 통일 */}
                       <span
-                        className="text-[11px] font-semibold text-center leading-tight whitespace-pre-line"
+                        className="text-[11px] font-semibold text-center leading-tight w-[68px]"
                         style={{ color: "#3d2b4e", textShadow: "0 1px 4px rgba(255,255,255,0.4)" }}
                       >
                         {app.name}
